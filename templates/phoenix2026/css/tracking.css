@@ -1,0 +1,265 @@
+/* =========================================================
+   PHOENIX — TRACKING / CONSENT UI
+========================================================= */
+
+.phoenix-consent[hidden] {
+    display: none !important;
+}
+
+.phoenix-consent {
+    position: fixed;
+    z-index: 1000000;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    opacity: 0;
+    transform: translateY(18px);
+
+    pointer-events: none;
+
+    transition:
+        opacity .22s ease,
+        transform .22s ease;
+}
+
+.phoenix-consent.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.phoenix-consent__content {
+    width: min(
+        820px,
+        100%
+    );
+
+    margin-left: auto;
+
+    padding:
+        18px
+        18px
+        18px
+        20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .10
+        );
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            17,
+            24,
+            32,
+            .96
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0
+        20px
+        55px
+        rgba(
+            0,
+            0,
+            0,
+            .24
+        );
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+}
+
+.phoenix-consent__copy {
+    min-width: 0;
+}
+
+.phoenix-consent__copy strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.phoenix-consent__copy p {
+    max-width: 570px;
+
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            .68
+        );
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.phoenix-consent__actions {
+    flex: 0 0 auto;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.phoenix-consent__actions button {
+    min-height: 42px;
+
+    padding:
+        0
+        16px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.phoenix-consent__reject {
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .25
+        );
+
+    background: transparent;
+
+    color: #ffffff;
+}
+
+.phoenix-consent__accept {
+    border: 0;
+
+    background: #e30613;
+
+    color: #ffffff;
+}
+
+.phoenix-privacy-trigger {
+    position: fixed;
+
+    z-index: 999990;
+
+    left: 14px;
+    bottom: 14px;
+
+    min-height: 30px;
+
+    padding:
+        0
+        10px;
+
+    border:
+        1px solid
+        #e0e4e7;
+
+    border-radius: 999px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .88
+        );
+
+    color: #6c747c;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    box-shadow:
+        0
+        5px
+        16px
+        rgba(
+            17,
+            24,
+            39,
+            .08
+        );
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+.phoenix-privacy-trigger:hover {
+    color: #e30613;
+
+    border-color:
+        rgba(
+            227,
+            6,
+            19,
+            .22
+        );
+}
+
+
+@media (max-width: 700px) {
+
+    .phoenix-consent {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .phoenix-consent__content {
+        padding: 16px;
+
+        display: block;
+
+        border-radius: 18px;
+    }
+
+    .phoenix-consent__copy p {
+        font-size: 10px;
+    }
+
+    .phoenix-consent__actions {
+        margin-top: 14px;
+    }
+
+    .phoenix-consent__actions button {
+        flex: 1;
+
+        min-height: 44px;
+    }
+
+    .phoenix-privacy-trigger {
+        left: 10px;
+        bottom: 10px;
+    }
+
+}
